@@ -1,8 +1,9 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
+import React, { Suspense } from "react";
 
-export default function About() {
+function AboutContent() {
   const params = useSearchParams();
   const locale = params.get("locale") || "en";
 
@@ -17,7 +18,6 @@ export default function About() {
       </h1>
 
       <div className="space-y-6 text-lg text-gray-700 leading-relaxed text-justify max-w-4xl mx-auto">
-
         <p>{about.paragraph1}</p>
         <p>{about.paragraph2}</p>
         <p>{about.paragraph3}</p>
@@ -25,19 +25,12 @@ export default function About() {
 
       {/* ===== SKILLS SNAPSHOT ===== */}
       <section className="mt-16">
-        <h2 className="text-2xl font-bold text-navy mb-6">
-          {skills.heading}
-        </h2>
+        <h2 className="text-2xl font-bold text-navy mb-6">{skills.heading}</h2>
 
         <div className="grid md:grid-cols-3 gap-6">
           {skills.groups.map((group: any, index: number) => (
-            <div
-              key={index}
-              className="p-6 bg-ash-light rounded-xl shadow-sm"
-            >
-              <h3 className="font-semibold text-navy mb-3">
-                {group.title}
-              </h3>
+            <div key={index} className="p-6 bg-ash-light rounded-xl shadow-sm">
+              <h3 className="font-semibold text-navy mb-3">{group.title}</h3>
               <ul className="list-disc list-inside text-gray-700 space-y-1">
                 {group.items.map((item: string, i: number) => (
                   <li key={i}>{item}</li>
@@ -56,23 +49,14 @@ export default function About() {
 
         <ul className="space-y-6">
           {education.list.map((edu: any, index: number) => (
-            <li
-              key={index}
-              className="p-6 bg-ash-light rounded-xl shadow-sm"
-            >
-              <h3 className="text-xl font-bold text-navy">
-                {edu.institution}
-              </h3>
+            <li key={index} className="p-6 bg-ash-light rounded-xl shadow-sm">
+              <h3 className="text-xl font-bold text-navy">{edu.institution}</h3>
 
-              <p className="text-gray-700 font-medium">
-                {edu.degree}
-              </p>
+              <p className="text-gray-700 font-medium">{edu.degree}</p>
 
               {/* GPA / Grade (optional) */}
               {edu.result && (
-                <p className="text-gray-600 text-sm mt-1">
-                  {edu.result}
-                </p>
+                <p className="text-gray-600 text-sm mt-1">{edu.result}</p>
               )}
 
               <div className="flex flex-col sm:flex-row sm:justify-between text-gray-500 text-sm mt-2">
@@ -84,5 +68,14 @@ export default function About() {
         </ul>
       </section>
     </div>
+  );
+}
+
+// Wrapping AboutContent with Suspense Boundary
+export default function About() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <AboutContent />
+    </Suspense>
   );
 }
