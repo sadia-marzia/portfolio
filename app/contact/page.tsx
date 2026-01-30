@@ -1,18 +1,33 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import {
-  AiOutlineMail,
-  AiFillGithub,
-  AiFillLinkedin,
-} from "react-icons/ai";
+import { Suspense, useEffect, useState } from "react";
+import { AiOutlineMail, AiFillGithub, AiFillLinkedin } from "react-icons/ai";
 import { SiGooglescholar, SiResearchgate } from "react-icons/si";
 
-export default function Contact() {
+function ContactContent() {
   const params = useSearchParams();
   const locale = params.get("locale") || "en";
 
-  const translations = require(`../../locales/${locale}.json`);
+  const [translations, setTranslations] = useState<any>(null);
+
+  // Load translations dynamically
+  useEffect(() => {
+    import(`../../locales/${locale}.json`)
+      .then((localeData) => {
+        setTranslations(localeData);
+      })
+      .catch((error) => {
+        console.error(`Failed to load translations for locale: ${locale}`, error);
+        setTranslations(null);
+      });
+  }, [locale]);
+
+  // Show loading state while translations are being fetched
+  if (!translations) {
+    return <p className="text-center mt-10">Loading translations...</p>;
+  }
+
   const { contact } = translations;
 
   // Map titles to icon components (not JSX)
@@ -47,8 +62,7 @@ export default function Contact() {
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center p-6 bg-ash-light rounded-xl shadow-sm 
-                         hover:bg-ash-hover hover:shadow-md transition-all duration-200"
+              className="flex items-center p-6 bg-ash-light rounded-xl shadow-sm hover:bg-ash-hover hover:shadow-md transition-all duration-200"
             >
               {/* Render Icon if exists */}
               {IconComponent && (
@@ -67,5 +81,13 @@ export default function Contact() {
         })}
       </div>
     </div>
+  );
+}
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<p className="text-center mt-10">Loading page...</p>}>
+      <ContactContent />
+    </Suspense>
   );
 }
