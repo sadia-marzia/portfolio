@@ -1,58 +1,71 @@
-import { notFound } from "next/navigation";
 import fs from "fs";
 import path from "path";
+import { Suspense } from "react";
 import ProjectDetailsClient from "./ProjectDetailsClient";
 
 export default async function ProjectDetailsPage({
-  params: promisedParams, // Treat `params` as a Promise
-  searchParams: promisedSearchParams, // Treat `searchParams` as a Promise
+  params: promisedParams,
+  searchParams: promisedSearchParams,
 }: {
-  params: Promise<{ id?: string }>; // Notice `params` as a Promise
+  params: Promise<{ id?: string }>;
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  // Resolve `params` and `searchParams` Promises
+  // Resolve the Promises for `params` and `searchParams`
   const resolvedParams = await promisedParams;
   const resolvedSearchParams = await promisedSearchParams;
 
-  // Extract `id` and `locale` after unwrapping the Promises
   const projectId = resolvedParams?.id;
   const locale = resolvedSearchParams?.locale || "en";
 
-  // Ensure projectId is available, otherwise return 404
   if (!projectId) {
-    return notFound();
+    // Optionally render a more user-friendly message if `projectId` is missing
+    return <div className="text-center p-6">Project ID is missing.</div>;
   }
 
   let translations;
 
   try {
-    // Safely resolve the translation file path
-    const translationPath = path.join(process.cwd(), "public", "locales", `${locale}.json`);
+    // Load translations dynamically for the specified locale
+    const translationPath = path.join(
+      process.cwd(),
+      "public",
+      "locales",
+      `${locale}.json`
+    );
     const fileContents = fs.readFileSync(translationPath, "utf-8");
     translations = JSON.parse(fileContents);
   } catch (error) {
     console.error(`Failed to load translations for locale: "${locale}"`, error);
-    return notFound();
+    return (
+      <div className="text-center p-6">
+        Failed to load translations. Please check the locale or try again later.
+      </div>
+    );
   }
 
-  // Validate the existence of the project in the translations
   const project = translations?.projects?.projectDetails?.[projectId];
 
   if (!project) {
-    return notFound();
+    return (
+      <div className="text-center p-6">
+        Sorry, we could not find the requested project.
+      </div>
+    );
   }
 
-  // Pass the resolved data to the Client Component
+  // Render detailed project information
   return (
-    <ProjectDetailsClient
-      project={{
-        tools: project.tools,
-        significance: project.significance,
-        description: project.description || "No description available.",
-        github: project.github,
-        images: project.images || [],
-      }}
-      title={translations.projects.projectTitles?.[projectId] || "Project"}
-    />
+    <Suspense fallback={<div>Loading project details...</div>}>
+      <ProjectDetailsClient
+        project={{
+          tools: project.tools,
+          significance: project.significance,
+          description: project.description || "No description available.",
+          github: project.github,
+          images: project.images || [],
+        }}
+        title={translations.projects.projectTitles?.[projectId] || "Project"}
+      />
+    </Suspense>
   );
 }
