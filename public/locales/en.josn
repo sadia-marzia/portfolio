@@ -1,0 +1,317 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "research": "Research",
+    "awards": "Awards",
+    "contact": "Contact"
+  },
+  "about": {
+    "heading": "About Me",
+    "paragraph1": "I am a graduate in Electronics and Telecommunication Engineering with a strong foundation in mathematics, signal processing, and system design. Over time, my academic journey naturally evolved toward artificial intelligence and machine learning, where I apply data-driven approaches to solve complex real-world problems.",
+    "paragraph2": "My interests span applied machine learning, data science, frontend development, and research. I enjoy working across the full pipeline—from data preprocessing and model development to visualization and deployment—while also exploring explainable AI and intelligent systems in healthcare and beyond.",
+    "paragraph3": "In the long term, I aim to grow as a versatile professional who bridges both academia and industry. I am open to roles that involve research, engineering, and product development, and I value environments that encourage continuous learning, collaboration, and impactful innovation."
+  },
+
+  "skills": {
+    "heading": "Skills Snapshot",
+    "groups": [
+      {
+        "title": "Machine Learning & AI",
+        "items": ["TensorFlow", "PyTorch", "Scikit-learn", "Model Evaluation", "Feature Engineering"]
+      },
+      {
+        "title": "Signal & Data Processing",
+        "items": ["ECG", "EEG", "Speech Signals", "Wavelets", "HRV Analysis"]
+      },
+      {
+        "title": "Programming & Development",
+        "items": ["Python", "C", "C++", "Bash", "Next.js", "React"]
+      }
+    ]
+  },
+
+  "education": {
+    "heading": "Education",
+    "list": [
+      {
+        "institution": "Chittagong University of Engineering & Technology",
+        "degree": "Master of Science in Electronics & Telecommunication Engineering",
+        "year": "July 2025 – Present",
+        "location": "Chattogram, Bangladesh"
+      },
+      {
+        "institution": "Chittagong University of Engineering & Technology",
+        "degree": "Bachelor of Science in Electronics & Telecommunication Engineering",
+        "year": "February 2020 – July 2025",
+        "location": "Chattogram, Bangladesh",
+        "result": "GPA: 3.84 / 4.00"
+      },
+      {
+        "institution": "Chattogram College",
+        "degree": "Higher Secondary School Certificate (HSC)",
+        "year": "2017 – 2019",
+        "location": "Chattogram, Bangladesh",
+        "result": "Grade: 5.00 / 5.00"
+      },
+      {
+        "institution": "Silver Bells Kindergarten & Girls’ High School",
+        "degree": "Secondary School Certificate (SSC)",
+        "year": "2012 – 2017",
+        "location": "Chattogram, Bangladesh",
+        "result": "GPA: 5.00 / 5.00"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "filterLabel": "Filter by Topic:",
+    "showAll": "Show All",
+    "detailsButton": "Details >>",
+    "projectTitles": {
+      "sap1": "Control Sequencer for SAP-1 Architecture",
+      "hospital": "Hospital Management Website",
+      "lighting": "Bluetooth Controlled Home Lighting System",
+      "handwash": "Automatic Handwash Dispenser",
+      "retinopathy": "Enhancing Diabetic Retinopathy Detection with Pretrained Networks",
+      "sleep": "Sleep Stage Classification Using Multimodal-XGBoost Model",
+      "speech": "Gender Debiased Speech Emotion Recognition Using Deep Learning Model"
+    },
+    "projectSummaries": {
+      "sap1": "Designed a control sequencer for smooth control of SAP-1 architecture.",
+      "hospital": "Developed a web-based hospital management system for managing records seamlessly.",
+      "lighting": "Built a Bluetooth-controlled lighting system for home automation.",
+      "handwash": "Created an automatic handwash dispenser using microcontroller-based design.",
+      "retinopathy": "Used pretrained networks to improve diabetic image classification accuracy.",
+      "sleep": "Implemented an XGBoost-based sleep stage classification model.",
+      "speech": "Developed a gender-debiased emotion recognition model using deep learning."
+    },
+    "projectDetails": {
+      "sap1": {
+        "tools": "Logisim Evolution",
+        "significance": "Hands-on implementation of a complete SAP-1 microarchitecture with custom control sequencing and instruction execution.",
+        "description": "This project implements a full SAP-1 (Simple-As-Possible) computer architecture using Logisim Evolution as part of the VLSI Technology Sessional at CUET. The design includes core components such as the Program Counter (PC), RAM, Instruction Register (IR), general-purpose registers A and B, an Adder/Subtractor ALU, Output Register, and a dedicated Control Unit. A custom control sequencer and instruction decoder were designed to generate precise control signals across multiple T-states. The architecture supports a complete instruction set including LDA, LDB, ADD, SUB, OUT, and HLT. Each instruction follows a structured fetch–execute cycle, verified through step-by-step clock-level simulation. The project demonstrates a clear understanding of digital control logic, micro-operations, instruction decoding, and datapath coordination in a basic CPU architecture.",
+        "github": "https://github.com/sadia-marzia/Control-Sequencer-for-SAP-1-Architecture",
+        "images": [
+          "/projects/sap1/SAP_architecture.png",
+          "/projects/sap1/control_sequencer.png",
+          "/projects/sap1/instruction_decoder.png"
+
+        ]
+      },
+      "hospital": {
+        "tools": "HTML, CSS, PHP, MySQL",
+        "significance": "Designed a comprehensive hospital management website to streamline patient interaction, appointment booking, and access to healthcare information.",
+        "description": "MedCare Hospital is a responsive web-based hospital management system developed as part of the Internet Programming course. The system provides detailed information about hospital services, departments, doctors, service fees, health tips, and news & events. A dynamic appointment booking module was implemented using PHP and MySQL to securely store patient information and manage appointment availability. The platform emphasizes usability, accessibility, and transparency to enhance patient engagement and digital healthcare delivery.",
+        "github": "https://github.com/sadia-marzia/Hospital-Management-Website",
+        "images": [
+          "/projects/hospital/project-flowchart.png",
+          "/projects/hospital/homepage.png",
+          "/projects/hospital/appointment.png",
+          "/projects/hospital/dept.png",
+          "/projects/hospital/dept-info.png"
+        ]
+      },
+      "lighting": {
+        "tools": "Arduino Uno, HC-05 Bluetooth Module, LDR Sensor, LEDs, Arduino IDE",
+        "significance": "Developed a smart and energy-efficient home lighting system that enables remote control via smartphone while automatically adapting to ambient light conditions.",
+        "description": "This project presents a Bluetooth-controlled home lighting system designed and implemented using Arduino Uno as part of the Electronic System Design and Project course. The system allows users to remotely control multiple room lights (living room, bedroom, dining room, and balcony) using a smartphone-based Bluetooth controller application. Wireless communication is established through an HC-05 Bluetooth module, enabling real-time command transmission between the smartphone and the microcontroller.\n\nA Light Dependent Resistor (LDR) sensor was integrated to intelligently manage the balcony light based on environmental lighting conditions. While indoor lights respond solely to user commands, the balcony light activates only when darkness is detected, even if the user issues an ON command—thereby ensuring energy-efficient operation. A global control feature was also implemented, allowing all lights to be turned ON or OFF simultaneously through a single command.\n\nThe system was powered using a 9V battery and assembled on a breadboard with appropriate resistors to regulate current flow. The Arduino firmware, developed using Arduino IDE, continuously monitors Bluetooth input data and LDR sensor values to execute conditional lighting logic. Experimental results demonstrated reliable wireless control, accurate light-intensity-based automation, and improved user convenience. The project successfully highlights the practical application of embedded systems, wireless communication, and sensor-based automation in smart home environments.",
+        "github": "https://github.com/sadia-marzia/Bluetooth-Controlled-Home-Lighting-System-Using-Arduino-UNO",
+        "images": [
+          "/projects/lighting/circuit-diagram.png",
+          "/projects/lighting/front-top-view.png",
+          "/projects/lighting/daylight-working.png",
+          "/projects/lighting/night-working.png"
+        ]
+      },
+      "handwash": {
+        "tools": "ATmega328P, Ultrasonic Sensor, Servo Motor, 7805 Voltage Regulator, Arduino IDE",
+        "significance": "Reduces cross-contamination and promotes hygienic handwashing through a fully touchless automated dispensing system.",
+        "description": "This project focuses on the design and implementation of a touchless automatic handwash dispenser aimed at improving hygiene and reducing the risk of cross-contamination, especially in public and healthcare environments. The system is built around an ATmega328P microcontroller, which processes distance measurements obtained from an ultrasonic sensor to detect the presence of hands beneath the dispenser.\n\nWhen a user places their hands within a predefined distance threshold, the ultrasonic sensor triggers the microcontroller to activate a servo motor. The servo motor precisely controls the dispensing mechanism, ensuring that a fixed and optimal amount of liquid soap is released each time. A predefined delay is implemented in the control logic to prevent excessive dispensing and reduce soap wastage.\n\nThe system is powered using a regulated 5V supply generated by a 7805 voltage regulator, ensuring stable and reliable operation. Supporting components such as capacitors, a 16 MHz crystal oscillator, and USB-to-serial interfaces were used to configure and program the microcontroller as an Arduino-compatible system. Experimental results confirmed accurate hand detection, consistent soap dispensing, and improved hygiene through complete elimination of physical contact.",
+        "github": "https://github.com/sadia-marzia/Automatic-Handwash-Dispenser-Using-ATmega328P-microcontroller",
+        "images": [
+          "/projects/handwash/block-diagram.png",
+          "/projects/handwash/workflow.png"
+        ]
+      },
+      "retinopathy": {
+        "tools": "Python, TensorFlow/Keras, EfficientNet-B0, DenseNet121, MobileNetV2",
+        "significance": "Supports early and accurate detection of diabetic retinopathy to reduce the risk of vision loss and assist automated eye screening.",
+        "description": "This project presents an automated diabetic retinopathy (DR) detection and severity classification system using pretrained deep learning models. Retinal fundus images were classified into five DR stages (No DR, Mild, Moderate, Severe, Proliferative) using transfer learning with MobileNetV2, DenseNet121, and EfficientNet-B0. Advanced preprocessing techniques such as resizing, green channel extraction, CLAHE, Gaussian filtering, normalization, and data augmentation were applied to enhance retinal features. Experimental results on a Kaggle fundus image dataset showed that EfficientNet-B0 achieved the best validation accuracy of 84.17%, outperforming the other models and demonstrating strong potential for practical automated DR screening systems.",
+        "github": "https://github.com/sadia-marzia/Diabetic_ratinopathy_detection_using_pretrained_models",
+        "images": [
+          "/projects/retinopathy/dataset-images.png",
+          "/projects/retinopathy/performance.png",
+          "/projects/retinopathy/confusion-matrix-EfficientNet-B0.png"
+        ]
+      },
+      "sleep": {
+        "tools": "Python, XGBoost, Random Forest, AdaBoost, SMOTE, UCDDB Dataset (EEG, EOG, EMG)",
+        "significance": "Enables accurate and automated sleep stage classification to support clinical diagnosis and reduce reliance on manual polysomnography scoring.",
+        "description": "This project presents an automated sleep stage classification framework using multimodal physiological signals, including EEG, EOG, and EMG, from the UCDDB dataset. Signals were band-pass filtered (0.5–48 Hz), resampled to 128 Hz, segmented into 30-second epochs, and normalized using Z-score normalization. Handcrafted time- and frequency-domain features were extracted from each modality. Random Forest, AdaBoost, and XGBoost classifiers were evaluated individually, where XGBoost consistently achieved superior performance across all signals. A soft-voting ensemble of EEG-, EOG-, and EMG-based XGBoost models was then developed to exploit complementary modality information. The proposed ensemble achieved an overall accuracy of 89.47% and ROC-AUC of 0.99, demonstrating strong robustness and suitability for clinical sleep analysis.",
+        "github": "https://github.com/sadia-marzia/SleepStageDetection",
+        "images": [
+          "/projects/sleep/workflow.png",
+          "/projects/sleep/performance.png",
+          "/projects/sleep/confusion-matrix.png"
+        ]
+      },
+      "speech": {
+        "tools": "Python, TensorFlow, CNN, CNN-Transformer, MFCC, Mel-Spectrogram, Chroma, EARS Dataset",
+        "significance": "Fair and accurate speech emotion recognition with reduced gender bias.",
+        "description": "Developed and analyzed multiple deep learning models for speech emotion recognition using the EARS dataset. Implemented CNN, CNN-Transformer, CNN-LSTM with attention, and a dual-branch MFCC–Mel spectrogram fusion model. The system achieved up to 83.33% accuracy for 5 emotions with near-zero gender bias, demonstrating robust and balanced performance across male and female speakers.",
+        "github": "https://github.com/sadia-marzia/SERModel", 
+        "images": [
+          "/projects/speech/Model-architecture.png",
+          "/projects/speech/performance-gender-debised.png",
+          "/projects/speech/confusion-matrix.png"
+        ]
+      }
+    }
+  },
+  "experience": {
+    "heading": "Experience",
+    "role": "Industrial Attachment Trainee",
+    "organization": "Teletalk Bangladesh Limited",
+    "duration": "28 February 2024 – 14 March 2024",
+    "location": "Dhaka, Bangladesh",
+    "responsibilities": [
+      "Gained hands-on exposure to core telecommunication system operations, including network infrastructure and service workflows.",
+      "Learned the fundamentals of billing systems and their integration with operational and customer-facing services.",
+      "Observed large-scale network coordination strategies supporting seamless telecommunication services across all 64 districts of Bangladesh.",
+      "Developed an understanding of real-world system integration, reliability, and operational efficiency in a national telecom environment."
+    ]
+  },
+  "contact": {
+    "heading": "Get in Touch",
+    "description": "I am open to research collaborations, engineering roles, and interdisciplinary opportunities. Feel free to reach out through email or connect with me on professional and academic platforms.",
+    "links": [
+      {
+        "title": "Email",
+        "label": "sadia.marzia36@gmail.com",
+        "url": "mailto:sadia.marzia36@gmail.com"
+      },
+      {
+        "title": "GitHub",
+        "label": "github.com/sadia-marzia",
+        "url": "https://github.com/sadia-marzia/"
+      },
+      {
+        "title": "LinkedIn",
+        "label": "linkedin.com/in/sadiatul-marzia-98294b2a1",
+        "url": "https://www.linkedin.com/in/sadiatul-marzia-98294b2a1/"
+      },
+      {
+        "title": "Google Scholar",
+        "label": "Google Scholar Profile",
+        "url": "https://scholar.google.com/citations?user=lkmyXKoAAAAJ&hl=en"
+      },
+      {
+        "title": "ResearchGate",
+        "label": "ResearchGate Profile",
+        "url": "https://www.researchgate.net/profile/Sadiatul-Marzia"
+      }
+    ]
+  },
+  "research": {
+    "heading": "Research",
+    "thesis": {
+      "title": "Undergraduate Thesis",
+      "subtitle": "Thesis Title: ECG-Based OSA Detection with SAGE-Selected Features Using Classical and Deep Learning Models",
+      "university": "CUET",
+      "points": [
+        "Extracted extensive time, frequency, nonlinear features from ECG signals to characterize sleep apnea patterns.",
+        "Applied the SAGE algorithm for feature selection with cumulative feature ranking technique, identifying the top 15 critical features.",
+        "Evaluated and compared classical machine learning models (Random Forest, XGBoost, LGBM, etc.) with a 1D CNN model, achieving top performance with the 1D CNN model."
+      ]
+    },
+    "conference": {
+      "title": "Conference Publication",
+      "authors": "Sadiatul Marzia, Md. Jahedul Islam, Reana Raen",
+      "paper": "Obstructive Sleep Apnea Detection Using 1D CNN-LSTM Approach",
+      "journal": "In: Data Science, AI and Applications, Communications in Computer and Information Science (CCIS), vol. 2681. ICDSAIA 2025, Springer, Cham, 2025.",
+      "doi": "10.1007/978-3-032-11335-1_15",
+      "doiLink": "https://doi.org/10.1007/978-3-032-11335-1_15"
+    },
+    "ongoing": {
+      "title": "Ongoing Research",
+      "description": "I am currently working with physiological signals and advancing deep learning and AI applications for these signals. My goal is to develop innovative, data-driven solutions for health monitoring, disease diagnosis, and predictive modeling, with a focus on leveraging state-of-the-art machine learning models for impactful research."
+    }
+  },
+  "welcome": "Hi, I'm Sadiatul Marzia",
+  "intro": "I am a motivated AI/ML engineer, data scientist, and frontend developer with a solid foundation in Electronics & Telecommunication Engineering. My work focuses on applying AI and machine learning techniques to real-world problems involving images, signals, and speech data. I am also keenly interested in emerging areas of VLSI design and hardware-aware AI. This portfolio presents my skills, academic background, practical experience, research work, and projects.",
+  "about2": {
+    "heading": "About Me",
+    "paragraph1": "I completed my undergraduate studies in Electronics and Telecommunication Engineering, where I developed a strong foundation in signal processing and embedded systems. During this time, my research projects increasingly incorporated data-driven techniques, which sparked my interest in AI and Machine Learning.",
+
+    "paragraph2": "Since then, I have expanded my expertise across applied AI, machine learning, data science, and frontend development, working on projects that span preprocessing, feature engineering, modeling, and deployment. I enjoy integrating AI solutions into real-world problems, particularly in domains like signal, image, and speech processing.",
+
+    "paragraph3": "My goal is to grow as a professional who bridges academic research and industry applications, contributing to impactful AI-driven innovations while continuing to explore emerging fields such as VLSI-aware machine learning and hardware-efficient AI systems."
+
+  },
+  "skills2": {
+    "heading": "Skills Snapshot",
+    "groups": [
+      {
+        "title": "Machine Learning & AI",
+        "items": ["TensorFlow", "PyTorch", "Scikit-learn", "Feature Engineering"]
+      },
+      {
+        "title": "Signal & Data Processing",
+        "items": ["ECG", "EEG", "Speech Signals", "Wavelets", "HRV Analysis"]
+      },
+      {
+        "title": "Programming & Development",
+        "items": ["Python", "C", "C++", "Bash", "Next.js", "React"]
+      }
+    ]
+  },
+  "education2": {
+    "heading": "Education",
+    "list": [
+      {
+        "institution": "Chittagong University of Engineering & Technology",
+        "degree": "Master of Science in Electronics & Telecommunication Engineering",
+        "year": "July 2025 – Present",
+        "location": "Chattogram, Bangladesh"
+      },
+      {
+        "institution": "Chittagong University of Engineering & Technology",
+        "degree": "Bachelor of Science in Electronics & Telecommunication Engineering",
+        "year": "February 2020 – June 2025",
+        "location": "Chattogram, Bangladesh",
+        "result": "GPA: 3.84/4.00"
+      }
+    ]
+  },
+  "experience2": {
+    "heading": "Experience",
+    "list": [
+      {
+        "position": "Industrial Attachment",
+        "company": "Teletalk Bangladesh Limited",
+        "period": "28 February, 2024 – 14 March, 2024",
+        "location": "Dhaka, Bangladesh",
+        "description": "Gained hands-on experience in system operations, networking, and billing systems while learning integration strategies supporting telecom services across Bangladesh."
+      }
+    ]
+  },
+  "contact2": {
+    "heading": "Get in Touch",
+    "description": "I am open to research collaborations, engineering roles, and interdisciplinary opportunities. Feel free to reach out through email or connect with me on professional and academic platforms.",
+    "links": [
+      {
+        "title": "Email",
+        "label": "sadia.marzia36@gmail.com",
+        "url": "mailto:sadia.marzia36@gmail.com"
+      },
+      {
+        "title": "LinkedIn",
+        "label": "linkedin.com/in/sadiatul-marzia-98294b2a1",
+        "url": "https://www.linkedin.com/in/sadiatul-marzia-98294b2a1/"
+      }
+    ]
+  }
+}
